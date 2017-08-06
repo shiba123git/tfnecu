@@ -7,7 +7,7 @@
 <title>Personal Information Management System</title>
 </head>
 <body>
-
+<form action="/Logon">
 <table>
       <tr><td align="center" colspan="2">Account Login</td></tr>
      
@@ -32,6 +32,6 @@
       
       
 </table>
-
+</form>
 </body>
 </html>
