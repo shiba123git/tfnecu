@@ -22,3 +22,4 @@ public class HibernateAnnotationUtil {
 		return (null!=sessionfactory)?sessionfactory: new AnnotationConfiguration().configure("").buildSessionFactory();
 	}
 }
+	
