@@ -7,7 +7,7 @@
 <title>Personal Information Management System</title>
 </head>
 <body>
-
+<form action="">
 <table>
       <tr><td align="center" colspan="2">New User Register</td></tr>
       <tr>
@@ -42,6 +42,6 @@
       
       
 </table>
-
+</form>
 </body>
 </html>

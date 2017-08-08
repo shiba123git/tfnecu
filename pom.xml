@@ -48,12 +48,19 @@
 			</dependency>
 			
 				<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
-				<dependency>
+				<!-- <dependency>
 				    <groupId>org.springframework</groupId>
 				    <artifactId>spring-web</artifactId>
 				    <version>5.0.0.RC3</version>
-				</dependency>
-
+				</dependency> -->
+				
+				
+				<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.8.0-alpha2</version>
+</dependency>
   </dependencies>
   <build>
     <finalName>pims</finalName>

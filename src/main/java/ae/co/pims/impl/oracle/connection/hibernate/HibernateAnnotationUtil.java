@@ -13,13 +13,15 @@ import org.slf4j.LoggerFactory;
  *
  */
 public class HibernateAnnotationUtil {
-	
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(HibernateAnnotationUtil.class);
-	private static final String FULLY_QUALIFIED_CLASS_NAME="ae.co.pims.impl.oracle.connection.hibernate.HibernateAnnotationUtil";
-	private static SessionFactory sessionfactory=null;
-	public static SessionFactory getSessionFactory()
-	{
-		return (null!=sessionfactory)?sessionfactory: new AnnotationConfiguration().configure("").buildSessionFactory();
+	private static final String FULLY_QUALIFIED_CLASS_NAME = "ae.co.pims.impl.oracle.connection.hibernate.HibernateAnnotationUtil";
+	private static SessionFactory sessionfactory = null;
+
+	public static SessionFactory getSessionFactory() {
+		return (null != sessionfactory) ? sessionfactory
+				: new AnnotationConfiguration()
+						.configure("/ae/co/pims/impl/oracle/connection/hibernate/hibernate.cfg.xml")
+						.buildSessionFactory();
 	}
 }
-	
