@@ -46,6 +46,14 @@
 			    <artifactId>itextpdf</artifactId>
 			    <version>5.5.11</version>
 			</dependency>
+			
+				<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+				<dependency>
+				    <groupId>org.springframework</groupId>
+				    <artifactId>spring-web</artifactId>
+				    <version>5.0.0.RC3</version>
+				</dependency>
+
   </dependencies>
   <build>
     <finalName>pims</finalName>
