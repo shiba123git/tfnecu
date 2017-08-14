@@ -3,6 +3,7 @@
  */
 package ae.co.pims.impl;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import ae.co.pims.common.BankDetails;
@@ -13,8 +14,13 @@ import ae.co.pims.common.BankDetails;
  */
 public interface BankService<T> {
 	public boolean createBank(BankDetails bao);
-	public List<BankDetails>  getBankbyName(String name);
-	public List<BankDetails>  getBankbyifscCode(String ifsccode);
+
+	public List<BankDetails> getBankbyName(String name);
+
+	public List<BankDetails> getBankbyifscCode(String ifsccode);
+
 	public boolean isActive(String bankName);
+
+	public List<BankDetails> getBankbyId(BigInteger bankobjectId);
 
 }
