@@ -16,6 +16,8 @@ import org.slf4j.LoggerFactory;
 import ae.co.pims.impl.oracle.connection.hibernate.HibernateAnnotationUtil;
 
 /**
+ * <<<<<<< HEAD
+ * 
  * @author Babu
  *
  */
