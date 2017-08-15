@@ -13,14 +13,17 @@ import ae.co.pims.common.EmployerDetails;
  *
  */
 public interface EmploymenetDetailsService {
-	
-	public boolean addEmployer(Object obj);
+
+	public boolean addEmployer(EmployerDetails obj);
+
 	public boolean updateEmployer(Object obj);
+
 	public List<EmployerDetails> getEmployeerDetails();
+
 	public List<EmployerDetails> getEmployeerbyName(String name);
+
 	public List<EmployerDetails> getEmployeerbyTAN(String tanNo);
+
 	public List<EmployerDetails> getCurrentCompanyDetails();
-	
-	
 
 }

@@ -7,8 +7,9 @@
 <title>Personal Information Management System</title>
 </head>
 <body>
-<form action="">
+<form action="createEmployer.spring" method="post">
 <table>
+      
       <tr><td align="center" colspan="2">Employer Details</td></tr>
       <tr>
       <td>Name:</td>
@@ -37,7 +38,7 @@
       
       <tr>
       <td>Tan Number:</td>
-      <td><input type="text" name="pfNumber"></td>
+      <td><input type="text" name="tanNo"></td>
       </tr>
       
       <tr>

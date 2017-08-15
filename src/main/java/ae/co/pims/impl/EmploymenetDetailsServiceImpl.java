@@ -22,16 +22,20 @@ import ae.co.pims.impl.oracle.connection.hibernate.HibernateAnnotationUtil;
  * @param <V>
  *
  */
-public class EmploymenetDetailsServiceImpl implements EmploymenetDetailsService{
+public class EmploymenetDetailsServiceImpl implements EmploymenetDetailsService {
 
-	
 	private static final Logger LOGGER = LoggerFactory.getLogger(EmploymenetDetailsServiceImpl.class);
 	private static final String FULLY_QUALIFIED_CLASS_NAME = "ae.co.pims.impl.EmploymenetDetailsServiceImpl";
 	private static SessionFactory sessionfactory = null;
 	private static Session session = null;
 	private static Transaction tx = null;
+
 	@Override
-	public boolean addEmployer(Object v) {
+	public boolean addEmployer(EmployerDetails employerObject) {
+		sessionfactory = HibernateAnnotationUtil.getSessionFactory();
+		session = sessionfactory.openSession();
+		tx = session.beginTransaction();
+		session.save(employerObject);
 		return false;
 	}
 
@@ -42,38 +46,38 @@ public class EmploymenetDetailsServiceImpl implements EmploymenetDetailsService{
 
 	@Override
 	public List<EmployerDetails> getEmployeerDetails() {
-		List<EmployerDetails> employeerDetails=new ArrayList<EmployerDetails>();
+		List<EmployerDetails> employeerDetails = new ArrayList<EmployerDetails>();
 		return employeerDetails;
 	}
 
 	@Override
 	public List<EmployerDetails> getEmployeerbyName(String name) {
-	    List<EmployerDetails> singleEmployeerList=new ArrayList<EmployerDetails>();
+		List<EmployerDetails> singleEmployeerList = new ArrayList<EmployerDetails>();
 		return singleEmployeerList;
 	}
 
 	@Override
 	public List getEmployeerbyTAN(String tanNo) {
-		List<EmployerDetails> singleEmployeerTanList=new ArrayList<EmployerDetails>();
-		sessionfactory=HibernateAnnotationUtil.getSessionFactory();
-		session=sessionfactory.openSession();
-		tx=session.beginTransaction();
-		Criteria creteria=session.createCriteria(EmployerDetails.class);
+		List<EmployerDetails> singleEmployeerTanList = new ArrayList<EmployerDetails>();
+		sessionfactory = HibernateAnnotationUtil.getSessionFactory();
+		session = sessionfactory.openSession();
+		tx = session.beginTransaction();
+		Criteria creteria = session.createCriteria(EmployerDetails.class);
 		creteria.add(Restrictions.eq("tanNo", tanNo));
-		singleEmployeerTanList=creteria.list();
+		singleEmployeerTanList = creteria.list();
 		return singleEmployeerTanList;
 	}
 
 	@Override
 	public List<EmployerDetails> getCurrentCompanyDetails() {
-		
-		List<EmployerDetails> currentCompanyDetails=new ArrayList<EmployerDetails>();
-		sessionfactory=HibernateAnnotationUtil.getSessionFactory();
-		session=sessionfactory.openSession();
-		tx=session.beginTransaction();
-		Criteria creteria=session.createCriteria(EmployerDetails.class);
+
+		List<EmployerDetails> currentCompanyDetails = new ArrayList<EmployerDetails>();
+		sessionfactory = HibernateAnnotationUtil.getSessionFactory();
+		session = sessionfactory.openSession();
+		tx = session.beginTransaction();
+		Criteria creteria = session.createCriteria(EmployerDetails.class);
 		creteria.add(Restrictions.eq("isCurrentCompany", true));
-		currentCompanyDetails=creteria.list();
+		currentCompanyDetails = creteria.list();
 		return currentCompanyDetails;
 	}
 
