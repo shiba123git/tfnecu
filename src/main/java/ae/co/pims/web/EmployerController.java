@@ -27,8 +27,8 @@ public class EmployerController {
 	@RequestMapping(value = "/createEmployer.spring", method = RequestMethod.POST)
 	public ModelAndView createEmployer(@RequestParam("name") String name, @RequestParam("address") String address,
 			@RequestParam("fdate") String fromDate, @RequestParam("toDate") String toDate,
-			@RequestParam("pfNumber") String pfNumber, @RequestParam("address") String tanNo,
-			@RequestParam("employeeId") String employeeId, @RequestParam("address") String isCurrentCompany) {
+			@RequestParam("pfNumber") String pfNumber, @RequestParam("tanNo") String tanNo,
+			@RequestParam("employeeId") String employeeId, @RequestParam("isCurrentCompany") String isCurrentCompany) {
 
 		boolean isCC = (isCurrentCompany.equalsIgnoreCase(YES)) ? true : false;
 		EmployerDetails ed = new EmployerDetails();
@@ -39,7 +39,7 @@ public class EmployerController {
 		ed.setTanNo(tanNo);
 		ed.setCurrentCompany(isCC);
 		employerService.addEmployer(ed);
-		String message = "Hello";
+		String message = "success";
 		return new ModelAndView("result", "message", message);
 
 	}

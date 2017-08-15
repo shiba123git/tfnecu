@@ -42,6 +42,22 @@
       </tr>
       
       <tr>
+      <td>Employee Id:</td>
+      <td><input type="text" name="employeeId"></td>
+      </tr>
+      
+      <tr>
+      <td>Current Company:</td>
+      <td>
+      <select name="isCurrentCompany">
+      <option value="-">--Select--</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      </select>
+      </td>
+      </tr>
+      
+      <tr>
       <td align="center" colspan="2">
       <input type="submit" value="Save"/></td>
       </tr>
